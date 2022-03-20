@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: php-dev
+    container_name: recruitment-task-backend-developer_php
+    volumes:
+      - .:/usr/share/nginx/html:rw,cached
+
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: nginx-dev
+    container_name: recruitment-task-backend-developer_nginx
+    volumes:
+      - .:/usr/share/nginx/html:rw,cached
+    depends_on:
+      - php
+    ports:
+      - ${HTTP_PORT}:80
