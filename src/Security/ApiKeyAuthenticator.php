@@ -17,7 +17,6 @@ use Symfony\Component\Security\Http\Authenticator\Passport\SelfValidatingPasspor
 
 class ApiKeyAuthenticator extends AbstractAuthenticator
 {
-    private const API_KEY = '5hhZODMRrfUCQRqrRvqQQlZiiTcijncQ';
 
     private UserProvider $userProvider;
 
@@ -28,7 +27,7 @@ class ApiKeyAuthenticator extends AbstractAuthenticator
 
     public function supports(Request $request): ?bool
     {
-        return $request->headers->has('API-KEY');
+        return true;
     }
 
     public function authenticate(Request $request): Passport

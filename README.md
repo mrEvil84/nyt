@@ -56,3 +56,7 @@
 
 - Makefile zawiera kilka komend przydatnych w pracy z dockerem
 - `make test` - uruchomi PHPUnit w kontenerze PHP
+
+# Odpalanie:
+- curl --location --request GET 'http://localhost:8888/nytimes/fiat' --header 'API-KEY: 5hhZODMRrfUCQRqrRvqQQlZiiTcijncQ'
+- curl --location --request GET 'http://localhost:8888/nytimes/'
